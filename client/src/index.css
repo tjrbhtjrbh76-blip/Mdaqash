@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Tajawal', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(6, 95, 70, 0.25), transparent),
+    #020617;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* طاولة اللعب — لباد أخضر بإطار خشبي وذهبي */
+.felt-table {
+  background: radial-gradient(ellipse at center, #047857 0%, #065f46 45%, #022c22 100%);
+  box-shadow:
+    inset 0 0 90px rgba(0, 0, 0, 0.55),
+    0 25px 70px rgba(0, 0, 0, 0.55);
+  border: 10px solid #452b10;
+  outline: 3px solid rgba(251, 191, 36, 0.35);
+  outline-offset: -3px;
+}
+
+/* ظهر الورقة */
+.card-back {
+  background: repeating-linear-gradient(45deg, #064e3b 0 6px, #065f46 6px 12px);
+  border: 2px solid #fbbf24;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* وجه الورقة */
+.card-face {
+  background: linear-gradient(160deg, #ffffff 0%, #f1f5f9 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* حلقة نابضة حول صاحب الدور */
+@keyframes turn-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.9), 0 0 18px 4px rgba(251, 191, 36, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(251, 191, 36, 0.5), 0 0 28px 8px rgba(251, 191, 36, 0.35);
+  }
+}
+.turn-ring {
+  animation: turn-glow 1.2s ease-in-out infinite;
+}
+
+/* شريط تمرير أنيق */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #065f46;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
